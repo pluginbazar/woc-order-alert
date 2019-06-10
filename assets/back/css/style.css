@@ -1,0 +1,289 @@
+/*
+* @Author 		Pluginbazar
+* Copyright: 	2015 Pluginbazar
+*/
+
+@import "panel-checker.css";
+
+.woa_stop_alarm {
+	display:none;
+	float:right;
+}
+
+
+
+
+/* ===== Global Design Class =====  */
+.center { text-align:center !important; }
+
+.woa_btn {
+    padding: 20px 40px;
+    font-size: 18px;
+    width: 200px;
+    text-align: center;
+	cursor:pointer;
+}
+
+.woa_btn_center {
+    margin: 15% auto;
+}
+
+
+.woa_btn_green {
+	color: #fff;
+	background-color: #4485F3;
+	border:1px solid #4485F3;
+}
+.woa_btn_green:hover {
+    background-color: #F1F1F1;
+	border:1px solid #4485F3;
+    color: #4485F3;
+}
+
+.woa_btn_red {
+	color: #fff;
+	background-color: #DD4C3F;
+	border:1px solid #DD4C3F;
+}
+.woa_btn_red:hover {
+    background-color: #F1F1F1;
+	border:1px solid #DD4C3F;
+    color: #DD4C3F;
+}
+
+
+
+.woa_width_80   { width:80px; }
+.woa_width_100 { width:100px; }
+.woa_width_120 { width:120px; }
+.woa_width_160 { width:160px; }
+.woa_width_180 { width:180px; }
+.woa_width_220 { width:220px; }
+.woa_width_280 { width:280px; }
+.woa_width_320 { width:320px; }
+
+
+
+ul.order_item_container {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+li.single_item {
+    border-bottom: 1px solid #bbb;
+}
+
+li.single_item:first-child {
+	background: linear-gradient(to bottom, #bbb, #FFF);
+    font-size: 16px;
+    font-weight: bold;
+    color: #235FC5;
+}
+
+
+ul.single_item_inner {
+    display: inline-flex;
+}
+ul.single_item_inner li {
+    padding:10px;
+}
+
+
+
+
+.back-settings-panel {
+	margin-right:20px;
+	background-color:#fff;
+	height:500px;
+}
+
+.back-settings-panel .panel_header{
+    padding: 15px 25px;
+    background-color: #377FBD;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.back-settings-panel .panel_loader{
+    height: 100%;
+    font-size: 110px;
+    background-color: #377FBD;
+    color: #fff;
+    border-top: 1px solid #fff;
+    text-align: center;
+}
+
+.back-settings-panel .panel_loader i{
+	margin-top: 17%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Admin Panel Time Picker */
+
+.ui-timepicker-wrapper {
+	overflow-y: auto;
+	height: 150px;
+	width: 260px;
+	background: #fff;
+	border: 1px solid #ddd;
+	-webkit-box-shadow:0 5px 10px rgba(0,0,0,0.2);
+	-moz-box-shadow:0 5px 10px rgba(0,0,0,0.2);
+	box-shadow:0 5px 10px rgba(0,0,0,0.2);
+	outline: none;
+	z-index: 10001;
+	margin: 0;
+}
+
+.ui-timepicker-wrapper.ui-timepicker-with-duration {
+	width: 13em;
+}
+
+.ui-timepicker-wrapper.ui-timepicker-with-duration.ui-timepicker-step-30,
+.ui-timepicker-wrapper.ui-timepicker-with-duration.ui-timepicker-step-60 {
+	width: 11em;
+}
+
+.ui-timepicker-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.ui-timepicker-duration {
+	margin-left: 5px; color: #888;
+}
+
+.ui-timepicker-list:hover .ui-timepicker-duration {
+	color: #888;
+}
+
+.ui-timepicker-list li {
+	padding: 3px 0 3px 5px;
+	cursor: pointer;
+	white-space: nowrap;
+	color: #000;
+	list-style: none;
+	margin: 0;
+}
+
+.ui-timepicker-list:hover .ui-timepicker-selected {
+	background: #fff; color: #000;
+}
+
+li.ui-timepicker-selected,
+.ui-timepicker-list li:hover,
+.ui-timepicker-list .ui-timepicker-selected:hover {
+	background: #1980EC; color: #fff;
+}
+
+li.ui-timepicker-selected .ui-timepicker-duration,
+.ui-timepicker-list li:hover .ui-timepicker-duration {
+	color: #ccc;
+}
+
+.ui-timepicker-list li.ui-timepicker-disabled,
+.ui-timepicker-list li.ui-timepicker-disabled:hover,
+.ui-timepicker-list li.ui-timepicker-selected.ui-timepicker-disabled {
+	color: #888;
+	cursor: default;
+}
+
+.ui-timepicker-list li.ui-timepicker-disabled:hover,
+.ui-timepicker-list li.ui-timepicker-selected.ui-timepicker-disabled {
+	background: #f2f2f2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* other plugins design */
+
+.pb_other_pluings  a{
+	text-decoration:none !important;
+}
+.pb_other_pluings {
+    margin-right: 20px;
+    background-color: #fff;
+}
+
+.pb_other_plugins_header {
+    text-align: center;
+    background-color: #377FBD;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 0;
+	cursor:pointer;
+}
+
+.pb_single_item {
+    width: 220px;
+    text-align: center;
+    border: 1px solid #377FBD;
+    margin: 10px;
+	display: inline-block;
+}
+
+
+.pb_plugin_header {
+    font-size: 16px;
+    margin: 10px 0px;
+}
+
+.pb_purchase_premium {
+    background-color: #377FBD;
+    font-size: 17px;
+    margin: 10px 2px;
+    padding: 8px 0;
+    cursor: pointer;
+}
+.pb_purchase_premium  a{
+	color: #fff !important;
+	padding: 4px 30px;
+}
+
+.pb_plugin_content {
+    height: 60px;
+}
+
+
+
+/* other plugins design */
