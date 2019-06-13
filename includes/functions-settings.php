@@ -21,6 +21,7 @@ $woa_panel_settings = array(
 
 	'page_nav'      => __( 'Settings', WOA_TD ),
 	'priority'      => 20,
+	'show_submit'   => false,
 	'page_settings' => array(
 
 		'woa_settings_general' => array(
@@ -66,13 +67,9 @@ $woa_panel_settings = array(
 					'args'     => array( 'yes' => __( 'Check both conditions (AND)', WOA_TD ) ),
 					'disabled' => true,
 				),
-
 			)
 		),
-
-
 	),
-
 );
 
 $woa_panel_help = array(
@@ -88,27 +85,43 @@ $woa_panel_help = array(
 			'options'     => array(
 				array(
 					'id'      => 'woa_demo',
-					'title'   => __( 'Demo installation', WOA_TD ),
-					'details' => __( 'Please contact us for support, <a href="https://www.pluginbazar.net/demo/woocommerce-order-alert/wp-admin/admin.php?page=woc-order-alert">Demo installation view</a><br>Username: demo-woa<br>Password: demo-pluginbazar', WOA_TD ),
-					'type'    => 'custom',
+					'title'   => esc_html__( 'Demo installation', WOA_TD ),
+					'details' => sprintf( '<a href="%s?ref=%s" target="_blank">%s</a><br>%s<br>%s',
+						esc_url_raw( 'https://demo.pluginbazar.com/woocommerce-order-alert/wp-admin/admin.php?page=woc-order-alert', array( 'https' ) ),
+						$_SERVER['HTTP_HOST'],
+						esc_html__( 'Try Demo', WOA_TD ),
+						esc_html__( 'Username: demo-woa', WOA_TD ),
+						esc_html__( 'Password: pluginbazar', WOA_TD )
+					),
 				),
 				array(
 					'id'      => 'woa_premium',
-					'title'   => __( 'Buy Premium', WOA_TD ),
-					'details' => __( 'Premium version is coming soon with lots of feature! Keep checking at <a href="https://www.pluginbazar.net">Pluginbazar</a>', WOA_TD ),
-					'type'    => 'custom',
+					'title'   => esc_html__( 'Buy Premium', WOA_TD ),
+					'details' => sprintf( '<a href="%s" target="_blank">%s</a> %s',
+						esc_url_raw( 'https://pluginbazar.com/plugin/woocommerce-order-alert/', array( 'https' ) ),
+						esc_html__( 'Try Premium', WOA_TD ),
+						esc_html__( 'Change Alarm Audio and get notified for new orders in many ways.', WOA_TD ),
+					),
 				),
 				array(
 					'id'      => 'woa_contact',
 					'title'   => __( 'Contact for support', WOA_TD ),
-					'details' => __( 'Getting error?<br>Please contact us for support, <a href="https://www.pluginbazar.net/forums/forum/woocommerce-order-alert/">https://www.pluginbazar.net/forums/forum/woocommerce-order-alert/</a>', WOA_TD ),
-					'type'    => 'custom',
+					'details' => sprintf( '%s<br>%s <a href="%s" target="_blank">%s</a>',
+						esc_html__( 'Getting error? or Any Problem?', WOA_TD ),
+						esc_html__( 'Please contact us for support, we will respond immediately.', WOA_TD ),
+						esc_url_raw( 'https://pluginbazar.com/forums/forum/woocommerce-order-alert/', array( 'https' ) ),
+						esc_html__( 'Ask Forum', WOA_TD )
+					),
 				),
 				array(
 					'id'      => 'woa_review',
 					'title'   => __( 'Reviews', WOA_TD ),
-					'details' => __( 'Love it?<br>Please Share your thoughts to let community know about this Plugin <a href="https://wordpress.org/support/plugin/woc-order-alert/reviews/#new-post">Add Review</a>', WOA_TD ),
-					'type'    => 'custom',
+					'details' => sprintf( '%s<br>%s <a href="%s" target="_blank">%s</a>',
+						esc_html__( 'Love this Plugin?', WOA_TD ),
+						esc_html__( 'Please Share your thoughts to let community know about this Plugin.', WOA_TD ),
+						esc_url_raw( 'https://wordpress.org/support/plugin/woc-order-alert/reviews/#new-post', array( 'https' ) ),
+						esc_html__( 'Add Review', WOA_TD )
+					)
 				),
 
 			)
@@ -134,7 +147,7 @@ $args = array(
 		'woa_panel_help'     => $woa_panel_help,
 	) ),
 	'show_sidebar'    => true,
-	'disabled_notice' =>  sprintf( '%s! <a target="_blank" href="%s">%s</a>',
+	'disabled_notice' => sprintf( '%s! <a target="_blank" href="%s">%s</a>',
 		esc_html__( 'Feature locked' ),
 		esc_url_raw( 'https://pluginbazar.com/plugin/woocommerce-order-alert/', array( 'https' ) ),
 		esc_html__( 'Try Premium' )

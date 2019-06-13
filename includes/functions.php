@@ -64,8 +64,7 @@ if ( ! function_exists( 'woa_ajax_check_new_order' ) ) {
 
 		wp_send_json_success(
 			array(
-//			    'count'	=> count( $all_orders ),
-				'count' => 1,
+			    'count'	=> count( $all_orders ),
 				'html'  => $html,
 				'audio' => woa_get_alarm_audio()
 			)
@@ -156,7 +155,7 @@ if ( ! function_exists( 'woa_get_alarm_audio' ) ) {
 			$response   = $response ? json_decode( $response ) : false;
 			$audio_file = $response ? $response->audio : '';
 
-//			update_option( 'woa_settings_audio_file', $audio_file );
+			update_option( 'woa_settings_audio_file', $audio_file );
 		}
 
 		return $audio_file;
