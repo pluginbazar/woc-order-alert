@@ -1,10 +1,10 @@
 === Woocommerce Order Alert ===
 	Contributors: jaedm97,pluginbazar
-	Donate link: https://www.pluginbazar.net/product/offer-a-cup-of-coffee/
-	Tags: woc-order-alert, WooCommerce Order Alert, Order Alert, Order alarm, Woocommerce Order Alarm, Alam, Alert, WooCommerce Alert, WooCommerce Alarm
+	Donate link: https://pluginbazar.com/
+	Tags: WooCommerce Order Alert, Order Alert, Order alarm, Woocommerce Order Alarm, Alam, Alert, WooCommerce Alert, WooCommerce Alarm
 	Requires at least: 3.8
-	Tested up to: 4.9.4
-	Stable tag: 2.0.2
+	Tested up to: 5.2.1
+	Stable tag: 3.0.0
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,10 +19,10 @@ This will save a lots of time and extra Employee cost and make your WooCommerce 
 
 ### Woocommerce Order Alert - Live Demo
 
-####[<b>ORDER CHECKER</b>](https://www.pluginbazar.net/demo/woocommerce-order-alert/wp-admin/admin.php?page=woc-order-alert)
+####[<b>TRY ORDER CHECKER</b>](https://demo.pluginbazar.com/woocommerce-order-alert/wp-admin/admin.php?page=woc-order-alert)
 `	
 	Username: demo-woa
-	Password: demo-pluginbazar
+	Password: pluginbazar
 `
 	
 	
@@ -48,5 +48,8 @@ This will save a lots of time and extra Employee cost and make your WooCommerce 
 	
 	= 2.0.2 =
     * 14/02/2018 Bug fixed - No sound problem when new order comes
+
+    = 3.0.0 =
+    * 13/06/2019 Implement New Feature
 	
 	

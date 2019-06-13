@@ -3,7 +3,7 @@
 	Plugin Name: WooCommerce Order Alert
 	Plugin URI: https://pluginbazar.net/
 	Description: This is a awesome solution for WooCommerce Order Alert.
-	Version: 2.0.2
+	Version: 3.0.0
 	Author: Pluginbazar
 	Author URI: https://www.pluginbazar.net/
 	License: GPLv2 or later
