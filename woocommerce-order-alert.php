@@ -121,7 +121,7 @@ class WooCommerceOrderAlert {
 		define( 'WOA_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 		define( 'WOA_IS_PRO', false );
 		define( 'WOA_TD', 'woc-order-alert' );
-		define( 'WOA_PB_API_URL', esc_url_raw( 'http://clients.local/api/wp-json/' ) );
+		define( 'WOA_PB_API_URL', esc_url_raw( 'https://api.pluginbazar.com/wp-json/' ) );
 	}
 }
 
