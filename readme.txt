@@ -1,39 +1,46 @@
-=== Woocommerce Order Alert ===
+=== Order Listener for WooCommerce – Play Sounds Instantly on New Orders ===
 	Contributors: jaedm97,pluginbazar
 	Donate link: https://pluginbazar.com/
-	Tags: WooCommerce Order Alert, Order Alert, Order alarm, Woocommerce Order Alarm, Alam, Alert, WooCommerce Alert, WooCommerce Alarm
-	Requires at least: 3.8
-	Tested up to: 5.2.1
-	Stable tag: 3.0.0
+	Tags: Order checker, order listener, Order Alert, WooCommerce Alert, WooCommerce Alarm
+	Requires at least: 4.2
+	Tested up to: 5.4.2
+	Stable tag: 3.1.1
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-	You can get alarm when a new order comes to your WooCommerce
+	Get notified with customized sound on speaker instantly your store receive an order through WooCommerce
 
 == Description ==
 
-Using this plugin you can get alert with strong volume alarm in your computer browser or any other device when a new order Come to your WooCommerce shop. No need to refresh or check for new order manually all the time.  
+This order listener plugin will make things awesome for WooCommerce store admin. The listener will check for new order and play music in your computer browser or in any device automatically as soon as the store receive an order. You don't need to refresh all the time to check for order. Everything will happen automatically, you just need to enable the listener once. This will definitely save lots of time and management for order processing and increase customer experience.
 
-This will save a lots of time and extra Employee cost and make your WooCommerce order processing faster as well as smarter than others.
-	
+Admin can add some conditions/rules to check special orders. Like - Minimum order amount, Check for special product etc.
 
-### Woocommerce Order Alert - Live Demo
+[TRY DEMO](https://demo.pluginbazar.com/order-listener/try-demo/) | [BUY PRO](https://pluginbazar.com/plugin/order-listener-for-woocommerce-play-sounds-instantly-on-orders/) | [SUPPORT](https://pluginbazar.com/my-account/tickets/?action=new) | [DOCUMENTATION](https://pluginbazar.com/docs/order-listener-for-woocommerce/)
 
-####[<b>TRY ORDER CHECKER</b>](https://demo.pluginbazar.com/woocommerce-order-alert/wp-admin/admin.php?page=woc-order-alert)
-`	
-	Username: demo-woa
-	Password: pluginbazar
-`
-	
-	
+### Features
+* Check order automatically
+* Play music when a new order placed
+* More features are coming...
+
+### PRO Features
+* Customize music and set your preferred once.
+* Add order checking rules. Currently available rules are
+> Minimum order amount.
+> Select product for specific products only.
+
 == Installation ==
 
-1. Install as regular WordPress plugin.<br />
-2. Go your plugin settings via WordPress Dashboard and find "<strong>Woocommerce Order Alert</strong>" activate it.<br />
+1. Upload <strong>Order Listener for WooCommerce</strong> to the /wp-content/plugins/ directory.
+2. Activate the plugin through the Plugins menu in WordPress.
+3. If you want to get all the features then Click Go Premium.
 
 == Screenshots ==
 
 1. screenshot-1.png
+1. screenshot-2.png
+1. screenshot-3.png
+1. screenshot-4.png
 
 == Changelog ==
 
@@ -51,5 +58,8 @@ This will save a lots of time and extra Employee cost and make your WooCommerce 
 
     = 3.0.0 =
     * 13/06/2019 Implement New Feature
+
+    = 3.1.0 =
+    * 30/07/2020 Reduce server resource with new searching algorithm.
 	
 	
