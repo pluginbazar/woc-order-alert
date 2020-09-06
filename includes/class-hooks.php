@@ -187,11 +187,13 @@ if ( ! class_exists( 'Olistener_hooks' ) ) {
 			 */
 			olistener_create_table();
 
-			/**
-			 * Create webhook
-			 */
-			olistener_create_webhook();
-
+			if ( function_exists( 'WC' ) ) {
+				/**
+				 * Create webhook
+				 */
+				olistener_create_webhook();
+			}
+			
 
 			/**
 			 * Register Settings Nav Menu
