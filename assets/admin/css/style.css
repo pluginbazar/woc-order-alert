@@ -158,6 +158,10 @@ a.plugin-meta-buy:visited {
     }
 }
 
+.woocommerce_page_olistener *[disabled] {
+    pointer-events: none;
+}
+
 a.olistener-support,
 a.olistener-support:focus,
 a.olistener-support:active,

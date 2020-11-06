@@ -24,73 +24,69 @@ defined( 'OLISTENER_REVIEW_URL' ) || define( 'OLISTENER_REVIEW_URL', 'https://wo
 defined( 'OLISTENER_DATA_TABLE' ) || define( 'OLISTENER_DATA_TABLE', $wpdb->prefix . 'woocommerce_order_listener' );
 
 
-class Olistener_main {
+if ( ! class_exists( 'Olistener_main' ) ) {
 	/**
-	 * Olistener_main constructor.
+	 * Class Olistener_main
 	 */
-	function __construct() {
+	class Olistener_main {
+		/**
+		 * Olistener_main constructor.
+		 */
+		function __construct() {
 
-		$this->loading_scripts();
-		$this->loading_functions_classes();
+			$this->loading_scripts();
+			$this->loading_functions_classes();
 
-		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
+			add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
+		}
+
+
+		/**
+		 * Load Textdomain
+		 */
+		function load_textdomain() {
+			load_plugin_textdomain( 'woc-order-alert', false, plugin_basename( dirname( __FILE__ ) ) . '/languages/' );
+		}
+
+
+		/**
+		 * Loading Functions and Classes
+		 */
+		function loading_functions_classes() {
+
+			require_once OLISTENER_PLUGIN_DIR . 'includes/class-pb-settings-3.2.php';
+			require_once OLISTENER_PLUGIN_DIR . 'includes/class-hooks.php';
+			require_once OLISTENER_PLUGIN_DIR . 'includes/class-functions.php';
+
+			require_once OLISTENER_PLUGIN_DIR . 'includes/functions.php';
+		}
+
+
+		/**
+		 * Admin Scripts
+		 */
+		function admin_scripts() {
+
+			wp_enqueue_script( 'olistener-admin', plugins_url( '/assets/admin/js/scripts.js', __FILE__ ), array( 'jquery' ) );
+			wp_localize_script( 'olistener-admin', 'olistener', array(
+				'ajaxUrl'     => admin_url( 'admin-ajax.php' ),
+				'confirmText' => esc_html__( 'Are you really want to reset the listener?', 'woc-order-alert' ),
+				'interval'    => olistener()->get_interval(),
+			) );
+
+			wp_enqueue_style( 'tool-tip', OLISTENER_PLUGIN_URL . 'assets/tool-tip.min.css' );
+			wp_enqueue_style( 'pb-core', OLISTENER_PLUGIN_URL . 'assets/pb-core.css' );
+			wp_enqueue_style( 'olistener-admin', OLISTENER_PLUGIN_URL . 'assets/admin/css/style.css' );
+		}
+
+
+		/**
+		 * Loading Scripts
+		 */
+		function loading_scripts() {
+			add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
+		}
 	}
 
-
-	/**
-	 * Load Textdomain
-	 */
-	function load_textdomain() {
-		load_plugin_textdomain( 'woc-order-alert', false, plugin_basename( dirname( __FILE__ ) ) . '/languages/' );
-	}
-
-
-	/**
-	 * Loading Functions and Classes
-	 */
-	function loading_functions_classes() {
-
-		require_once OLISTENER_PLUGIN_DIR . 'includes/class-pb-settings-3.2.php';
-		require_once OLISTENER_PLUGIN_DIR . 'includes/class-hooks.php';
-		require_once OLISTENER_PLUGIN_DIR . 'includes/class-functions.php';
-
-		require_once OLISTENER_PLUGIN_DIR . 'includes/functions.php';
-	}
-
-
-	/**
-	 * Admin Scripts
-	 */
-	function admin_scripts() {
-
-		wp_enqueue_script( 'olistener-admin', plugins_url( '/assets/admin/js/scripts.js', __FILE__ ), array( 'jquery' ) );
-		wp_localize_script( 'olistener-admin', 'olistener', array(
-			'ajaxUrl'     => admin_url( 'admin-ajax.php' ),
-			'confirmText' => esc_html__( 'Are you really want to reset the listener?', 'woc-order-alert' ),
-			'interval'    => olistener()->get_interval(),
-		) );
-
-		wp_enqueue_style( 'tool-tip', OLISTENER_PLUGIN_URL . 'assets/tool-tip.min.css' );
-		wp_enqueue_style( 'pb-core', OLISTENER_PLUGIN_URL . 'assets/pb-core.css' );
-		wp_enqueue_style( 'olistener-admin', OLISTENER_PLUGIN_URL . 'assets/admin/css/style.css' );
-	}
-
-
-	/**
-	 * Loading Scripts
-	 */
-	function loading_scripts() {
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
-	}
+	new Olistener_main();
 }
-
-new Olistener_main();
-
-
-add_action( 'wp_footer', function () {
-
-	$should_notify = apply_filters( 'olistener_filters_should_notify', true, 67 );
-
-	echo '<pre>'; var_dump( $should_notify ); echo '</pre>';
-
-} );

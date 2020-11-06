@@ -54,7 +54,7 @@ if ( ! class_exists( 'Olistener_functions' ) ) {
 
 			$settings = array(
 				'listener'          => array(
-					'page_nav'    => __( 'Checker', 'woc-order-alert' ),
+					'page_nav'    => __( 'Order Listener', 'woc-order-alert' ),
 					'show_submit' => false,
 				),
 				'listener-settings' => array(
@@ -78,15 +78,23 @@ if ( ! class_exists( 'Olistener_functions' ) ) {
 									'default'     => '30',
 									'placeholder' => '30',
 								),
+								array(
+									'id'       => 'olistener_order_status',
+									'title'    => __( 'Check by Order Status', 'woc-order-alert' ),
+									'details'  => __( 'Please specify which order status will be checked only. By default system will notify for all orders with any of these status', 'woc-order-alert' ),
+									'type'     => 'checkbox',
+									'args'     => wc_get_order_statuses(),
+									'disabled' => ! olistener()->is_pro(),
+								),
 							)
 						),
 						array(
-							'title'       => __( 'Searching Rules', 'woc-order-alert' ),
-							'description' => __( 'You can configure custom searching rules for order listener. If you need to add any custom rules, Please contact support.', 'woc-order-alert' ),
+							'title'       => __( 'Custom Searching Rules on Items', 'woc-order-alert' ),
+							'description' => __( 'You can configure custom searching rules with the ordered items for order listener. If you need to add any custom rules, Please contact support.', 'woc-order-alert' ),
 							'options'     => array(
 								array(
 									'id'       => 'olistener_enable_rules',
-									'title'    => __( 'Enable Searching Rules', 'woc-order-alert' ),
+									'title'    => __( 'Enable These Rules', 'woc-order-alert' ),
 									'type'     => 'checkbox',
 									'disabled' => ! olistener()->is_pro(),
 									'args'     => array(
