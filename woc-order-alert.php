@@ -90,3 +90,23 @@ if ( ! class_exists( 'Olistener_main' ) ) {
 
 	new Olistener_main();
 }
+
+/**
+ * Initialize the plugin tracker
+ *
+ * @return void
+ */
+function appsero_init_tracker_woc_order_alert() {
+
+	if ( ! class_exists( 'Appsero\Client' ) ) {
+		require_once __DIR__ . '/appsero/src/Client.php';
+	}
+
+	$client = new Appsero\Client( 'a69d88e3-aa45-4d19-a672-bdff317c2d82', 'Order Listener for WooCommerce – Play Sounds Instantly on New Orders', __FILE__ );
+
+	// Active insights
+	$client->insights()->init();
+
+}
+
+appsero_init_tracker_woc_order_alert();
