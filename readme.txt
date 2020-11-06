@@ -1,33 +1,65 @@
 === Order Listener for WooCommerce – Play Sounds Instantly on New Orders ===
 	Contributors: jaedm97,pluginbazar
 	Donate link: https://pluginbazar.com/
-	Tags: Order checker, order listener, Order Alert, WooCommerce Alert, WooCommerce Alarm
-	Requires at least: 4.2
+	Tags: Order checker, order listener, Order Alert, WooCommerce Alert, WooCommerce Alarm, Order sound notification
+	Requires at least: 4.6
+	Requires WooCommerce: 3.0
 	Tested up to: 5.5.3
+	Tested up to WooCommerce: 4.6.2
 	Stable tag: 3.1.2
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-	Get notified with customized sound on speaker instantly your store receive an order through WooCommerce
+	Get notified with customized sound on speaker instantly your Woo store receive an order.
 
 == Description ==
 
-This order listener plugin will make things awesome for WooCommerce store admin. The listener will check for new order and play music in your computer browser or in any device automatically as soon as the store receive an order. You don't need to refresh all the time to check for order. Everything will happen automatically, you just need to enable the listener once. This will definitely save lots of time and management for order processing and increase customer experience.
+This order listener plugin will make things awesome for WooCommerce store admin. The listener will check for new orders and play music in your computer browser or in any device automatically as soon as the store receive an order. You don't need to refresh all the time to check for order. Everything will happen automatically, you just need to enable the listener once. This will definitely save lots of time and management for order processing and increase customer experience.
 
 Admin can add some conditions/rules to check special orders. Like - Minimum order amount, Check for special product etc.
 
 [TRY DEMO](https://demo.pluginbazar.com/order-listener/try-demo/) | [BUY PRO](https://pluginbazar.com/plugin/order-listener-for-woocommerce-play-sounds-instantly-on-orders/) | [SUPPORT](https://pluginbazar.com/my-account/tickets/?action=new) | [DOCUMENTATION](https://pluginbazar.com/docs/order-listener-for-woocommerce/)
 
+
+### Plugin Overview
+[youtube https://www.youtube.com/watch?v=_Jmt3w_xUa4]
+
+
 ### Features
-* Check order automatically
-* Play music when a new order placed
-* More features are coming...
+* Check new order automatically.
+* Play sound or music when a new order placed.
+* Control request frequency with "Request per Minute" section.
+* Faster and almost zero impact on website performance.
+* More exciting features are coming...
+
 
 ### PRO Features
-* Customize music and set your preferred once.
-* Add order checking rules. Currently available rules are
-> Minimum order amount.
-> Select product for specific products only.
+* Customize sound/audio/music and replace default sound.
+* Check order based on Order Status
+* Custom Rules for checking orders. Currently available rules
+    * Notify when any preselected products are ordered.
+    * Notify when any product from preselected categories are ordered.
+    * Notify when any product from preselected tags are ordered.
+    * Notify when someone ordered an item from here.
+* Checking Rules Relation, Configure from backend settings.
+
+
+### ⭐⭐⭐⭐⭐ Users Review on WooCommerce Open Close
+[lukasleon24](https://wordpress.org/support/topic/its-a-great-plugin-44/)
+> Its a great Plugin
+>
+> I have tried many kind of plugin for my Fashion Shop…But they couldn’t full fill my Expectation…After all that hustle i tried this plugin and i am very much happy now…I love there Exclusive features…I think Every Business People Should use this plugin for there order Notification…Thank you so much
+
+
+## Privacy Policy
+Woocommerce Open Close &#8211; Best Business Schedules Manager uses [Appsero](https://appsero.com) SDK to collect some telemetry data upon user's confirmation. This helps us to troubleshoot problems faster & make product improvements.
+
+Appsero SDK **does not gather any data by default.** The SDK only starts gathering basic telemetry data **when a user allows it via the admin notice**. We collect the data to ensure a great user experience for all our users.
+
+Integrating Appsero SDK **DOES NOT IMMEDIATELY** start gathering data, **without confirmation from users in any case.**
+
+Learn more about how [Appsero collects and uses this data](https://appsero.com/privacy-policy/).
+
 
 == Installation ==
 
@@ -63,6 +95,6 @@ Admin can add some conditions/rules to check special orders. Like - Minimum orde
     * 30/07/2020 || Bug Fix || Reduce server resource with new searching algorithm.
 
     = 3.1.2 =
-    * 11/02/2020 || Bug Fix || Reduce server response
+    * 07/11/2020 || Bug Fix || Reduce server response
 	
 	
