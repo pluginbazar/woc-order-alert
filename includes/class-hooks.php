@@ -24,6 +24,7 @@ if ( ! class_exists( 'Olistener_hooks' ) ) {
 			add_action( 'admin_bar_menu', array( $this, 'handle_admin_bar_menu' ), 9999, 1 );
 
 			add_filter( 'woocommerce_webhook_deliver_async', '__return_false' );
+			add_filter( 'woocommerce_rest_check_permissions', '__return_true' );
 			add_filter( 'plugin_row_meta', array( $this, 'add_plugin_meta' ), 10, 2 );
 			add_filter( 'plugin_action_links_' . OLISTENER_PLUGIN_FILE, array( $this, 'add_plugin_actions' ), 10, 2 );
 		}
@@ -46,6 +47,10 @@ if ( ! class_exists( 'Olistener_hooks' ) ) {
 				$action_links['go-pro'] = sprintf( '<a target="_blank" class="plugin-meta-buy" href="%s">%s</a>', esc_url( OLISTENER_PLUGIN_LINK ), esc_html__( 'Go Premium', 'woc-order-alert' ) );
 			}
 
+			if( olistener()->is_pro() && isset( $action_links['deactivate'] ) ) {
+				unset( $action_links['deactivate'] );
+			}
+
 			return $action_links;
 		}
 
@@ -63,8 +68,8 @@ if ( ! class_exists( 'Olistener_hooks' ) ) {
 			if ( OLISTENER_PLUGIN_FILE === $file ) {
 
 				$row_meta = array(
-					'documentation' => sprintf( '<a target="_blank" href="%s">%s</a>', esc_url( OLISTENER_DOCS_URL ), esc_html__( 'Documentation', 'woc-order-alert' ) ),
-					'support'       => sprintf( '<a target="_blank" href="%s">%s</a>', esc_url( OLISTENER_TICKET_URL ), esc_html__( 'Create Ticket', 'woc-order-alert' ) ),
+					'documentation' => sprintf( '<a class="olistener-doc" target="_blank" href="%s">%s</a>', esc_url( OLISTENER_DOCS_URL ), esc_html__( 'Read Documentation', 'woc-order-alert' ) ),
+					'support'       => sprintf( '<a class="olistener-support" target="_blank" href="%s">%s</a>', esc_url( OLISTENER_TICKET_URL ), esc_html__( 'Create Support Ticket', 'woc-order-alert' ) ),
 				);
 
 				return array_merge( $links, $row_meta );
@@ -90,7 +95,7 @@ if ( ! class_exists( 'Olistener_hooks' ) ) {
 					)
 				);
 
-				printf('<style>li#wp-admin-bar-olistener > a, li#wp-admin-bar-olistener > a:hover, li#wp-admin-bar-olistener > a:focus, li#wp-admin-bar-olistener > a:active { color: #fff !important; background: #e61f63 !important; border-radius: 58px; margin-left: 10px !important; padding: 0 18px !important; }</style>');
+				printf( '<style>li#wp-admin-bar-olistener > a, li#wp-admin-bar-olistener > a:hover, li#wp-admin-bar-olistener > a:focus, li#wp-admin-bar-olistener > a:active { color: #fff !important; background: #e61f63 !important; border-radius: 58px; margin-left: 10px !important; padding: 0 18px !important; }</style>' );
 			}
 		}
 
@@ -118,7 +123,7 @@ if ( ! class_exists( 'Olistener_hooks' ) ) {
 
 				printf( '<tr>%s</tr>', implode( '', $item_data ) );
 
-				olistener()->get_wpdb()->delete( OLISTENER_DATA_TABLE, array( 'id' => $order_item->id ) );
+				olistener()->get_wpdb()->update( OLISTENER_DATA_TABLE, array( 'read_status' => 'read' ), array( 'id' => $order_item->id ) );
 			}
 
 			wp_send_json_success(
@@ -163,8 +168,9 @@ if ( ! class_exists( 'Olistener_hooks' ) ) {
 		 */
 		function register_endpoints() {
 			register_rest_route( 'olistener', '/new', array(
-				'methods'  => 'POST',
-				'callback' => array( $this, 'handle_payload' ),
+				'methods'             => 'POST',
+				'callback'            => array( $this, 'handle_payload' ),
+				'permission_callback' => '__return_true'
 			) );
 		}
 
@@ -193,7 +199,7 @@ if ( ! class_exists( 'Olistener_hooks' ) ) {
 				 */
 				olistener_create_webhook();
 			}
-			
+
 
 			/**
 			 * Register Settings Nav Menu

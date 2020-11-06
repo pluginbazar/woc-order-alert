@@ -3,8 +3,8 @@
 	Donate link: https://pluginbazar.com/
 	Tags: Order checker, order listener, Order Alert, WooCommerce Alert, WooCommerce Alarm
 	Requires at least: 4.2
-	Tested up to: 5.4.2
-	Stable tag: 3.1.1
+	Tested up to: 5.5.3
+	Stable tag: 3.1.2
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,21 +45,24 @@ Admin can add some conditions/rules to check special orders. Like - Minimum orde
 == Changelog ==
 
 	= 1.0.0 =
-    * 10/13/2016 Initial release.
+    * 10/13/2016 || New || Initial release.
 	
 	= 2.0.0 =
-    * 11/11/2017 Updates major parts of the Plugin
+    * 11/11/2017 || New Feature || Updates major parts of the Plugin
 	
 	= 2.0.1 =
-    * 12/02/2018 Added extra features
+    * 12/02/2018 || New Feature || Added extra features
 	
 	= 2.0.2 =
-    * 14/02/2018 Bug fixed - No sound problem when new order comes
+    * 14/02/2018 || Bug fix || No sound problem when new order comes
 
     = 3.0.0 =
-    * 13/06/2019 Implement New Feature
+    * 13/06/2019 || New Feature|| Implement New Feature
 
     = 3.1.0 =
-    * 30/07/2020 Reduce server resource with new searching algorithm.
+    * 30/07/2020 || Bug Fix || Reduce server resource with new searching algorithm.
+
+    = 3.1.2 =
+    * 11/02/2020 || Bug Fix || Reduce server response
 	
 	

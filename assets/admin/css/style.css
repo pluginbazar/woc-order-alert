@@ -2,6 +2,21 @@
  * Admin Styles
  */
 
+
+.select2-container {
+    min-width: 186px;
+}
+
+.select2-container li {
+    width: 100%;
+}
+
+.select2-container li input {
+    width: 100% !important;
+    display: inline-block;
+}
+
+
 .olistener {
     padding: 30px 0 0;
 }
@@ -92,20 +107,15 @@
     font-weight: 600;
 }
 
-.olistener .olistener-orders tr:hover .order-action {
-    visibility: visible;
-    opacity: 1;
-}
-
 .olistener .order-action {
     display: block;
     width: 38px;
     height: 38px;
-    opacity: 0;
+    opacity: 1;
     background: #717171;
     color: #fff;
     border-radius: 50%;
-    visibility: hidden;
+    visibility: visible;
     cursor: pointer;
     transition: 0.3s;
     margin: 0 auto;
@@ -146,4 +156,24 @@ a.plugin-meta-buy:visited {
     100% {
         transform: rotate(0deg);
     }
+}
+
+a.olistener-support,
+a.olistener-support:focus,
+a.olistener-support:active,
+a.olistener-doc,
+a.olistener-doc:focus,
+a.olistener-doc:active {
+    background: #e61f63;
+    color: #fff;
+    padding: 3px 12px 5px;
+    border-radius: 50px;
+    font-size: 12px;
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+a.olistener-doc {
+    background: #292929;
 }

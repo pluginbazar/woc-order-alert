@@ -31,7 +31,7 @@
                                 audioElement.load();
                                 audioElement.play();
                             }
-                            console.log(response);
+                            console.log(response.data);
                         },
                     });
                 }
@@ -39,7 +39,7 @@
                 if (ordersList.find('tr').length === 0) {
                     audioElement.pause();
                 }
-            }, 2000);
+            }, pluginObject.interval);
         }
 
         audioElement.addEventListener('ended', function () {

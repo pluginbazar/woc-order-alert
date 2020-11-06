@@ -3,7 +3,7 @@
 	Plugin Name: Order Listener for WooCommerce
 	Plugin URI: https://pluginbazar.com/
 	Description: Play sound as notification instantly on new order in your WooCommerce store
-	Version: 3.1.1
+	Version: 3.1.2
 	Author: Pluginbazar
 	Author URI: https://pluginbazar.com/
 	License: GPLv2 or later
@@ -67,6 +67,7 @@ class Olistener_main {
 		wp_localize_script( 'olistener-admin', 'olistener', array(
 			'ajaxUrl'     => admin_url( 'admin-ajax.php' ),
 			'confirmText' => esc_html__( 'Are you really want to reset the listener?', 'woc-order-alert' ),
+			'interval'    => olistener()->get_interval(),
 		) );
 
 		wp_enqueue_style( 'tool-tip', OLISTENER_PLUGIN_URL . 'assets/tool-tip.min.css' );
@@ -84,3 +85,12 @@ class Olistener_main {
 }
 
 new Olistener_main();
+
+
+add_action( 'wp_footer', function () {
+
+	$should_notify = apply_filters( 'olistener_filters_should_notify', true, 67 );
+
+	echo '<pre>'; var_dump( $should_notify ); echo '</pre>';
+
+} );
