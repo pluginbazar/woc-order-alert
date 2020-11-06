@@ -99,7 +99,7 @@ if ( ! class_exists( 'Olistener_main' ) ) {
 function appsero_init_tracker_woc_order_alert() {
 
 	if ( ! class_exists( 'Appsero\Client' ) ) {
-		require_once __DIR__ . '/appsero/src/Client.php';
+		require_once __DIR__ . '/includes/appsero/Client.php';
 	}
 
 	$client = new Appsero\Client( 'a69d88e3-aa45-4d19-a672-bdff317c2d82', 'Order Listener for WooCommerce – Play Sounds Instantly on New Orders', __FILE__ );
