@@ -5,8 +5,8 @@
 	Requires at least: 4.6
 	Requires WooCommerce: 3.0
 	Tested up to: 5.5.3
-	Tested up to WooCommerce: 4.6.2
-	Stable tag: 3.1.2
+	Tested up to WooCommerce: 4.7.0
+	Stable tag: 3.1.3
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,5 +96,7 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 
     = 3.1.2 =
     * 07/11/2020 || Bug Fix || Reduce server response
-	
-	
+
+    = 3.1.3 =
+    * 21/11/2020 || Update || License and Update manager added on Pro version
+

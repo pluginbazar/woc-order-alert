@@ -30,7 +30,7 @@ if ( ! class_exists( 'Olistener_functions' ) ) {
 		 * @return bool
 		 */
 		function is_pro() {
-			return class_exists( 'Olistener_pro_main' );
+			return apply_filters( 'olistener_filters_is_pro', class_exists( 'Olistener_pro_main' ) );
 		}
 
 

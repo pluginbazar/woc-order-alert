@@ -47,10 +47,6 @@ if ( ! class_exists( 'Olistener_hooks' ) ) {
 				$action_links['go-pro'] = sprintf( '<a target="_blank" class="plugin-meta-buy" href="%s">%s</a>', esc_url( OLISTENER_PLUGIN_LINK ), esc_html__( 'Go Premium', 'woc-order-alert' ) );
 			}
 
-			if( olistener()->is_pro() && isset( $action_links['deactivate'] ) ) {
-				unset( $action_links['deactivate'] );
-			}
-
 			return $action_links;
 		}
 
@@ -206,13 +202,14 @@ if ( ! class_exists( 'Olistener_hooks' ) ) {
 			 */
 			olistener()->PB_Settings( array(
 				'add_in_menu'      => true,
-				'menu_type'        => 'submenu',
+				'menu_type'        => 'menu',
 				'menu_title'       => esc_html__( 'Order Listener', 'woc-order-alert' ),
 				'page_title'       => esc_html__( 'Order Listener Settings', 'woc-order-alert' ),
 				'menu_page_title'  => esc_html__( 'Order Listener Settings', 'woc-order-alert' ),
 				'capability'       => 'manage_options',
+				'menu_icon'        => 'dashicons-bell',
 				'menu_slug'        => 'olistener',
-				'parent_slug'      => 'woocommerce',
+				'position'         => 55.5,
 				'pages'            => olistener()->get_settings_pages(),
 				'plugin_name'      => esc_html( 'Order Listener for WooCommerce' ),
 				'plugin_slug'      => 'woc-order-alert',
