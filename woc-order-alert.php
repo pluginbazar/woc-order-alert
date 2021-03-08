@@ -3,7 +3,7 @@
 	Plugin Name: Order Listener for WooCommerce
 	Plugin URI: https://pluginbazar.com/
 	Description: Play sound as notification instantly on new order in your WooCommerce store
-	Version: 3.1.3
+	Version: 3.2.0
 	Author: Pluginbazar
 	Author URI: https://pluginbazar.com/
 	License: GPLv2 or later
