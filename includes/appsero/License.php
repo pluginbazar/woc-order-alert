@@ -237,6 +237,7 @@ class License {
         $license = $this->get_license();
         $action  = ( $license && isset( $license['status'] ) && 'activate' == $license['status'] ) ? 'deactive' : 'active';
         $this->licenses_style();
+
         ?>
 
         <div class="wrap appsero-license-settings-wrapper">

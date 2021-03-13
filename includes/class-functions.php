@@ -83,7 +83,7 @@ if ( ! class_exists( 'Olistener_functions' ) ) {
 									'title'    => __( 'Check by Order Status', 'woc-order-alert' ),
 									'details'  => __( 'Please specify which order status will be checked only. By default system will notify for all orders with any of these status', 'woc-order-alert' ),
 									'type'     => 'checkbox',
-									'args'     => wc_get_order_statuses(),
+									'args'     => $this->get_order_statuses(),
 									'disabled' => ! olistener()->is_pro(),
 								),
 							)
@@ -195,6 +195,17 @@ if ( ! class_exists( 'Olistener_functions' ) ) {
 
 			return apply_filters( 'olistener_filters_setting_pages', $settings );
 		}
+
+
+		/**
+		 * Return order statuses from WooCommerce if that is installed and activated
+		 *
+		 * @return array
+		 */
+		function get_order_statuses() {
+			return function_exists( 'WC' ) ? wc_get_order_statuses() : array();
+		}
+
 
 		/**
 		 * PB_Settings Class
