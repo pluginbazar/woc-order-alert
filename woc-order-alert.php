@@ -3,7 +3,7 @@
 	Plugin Name: Order Listener for WooCommerce
 	Plugin URI: https://pluginbazar.com/
 	Description: Play sound as notification instantly on new order in your WooCommerce store
-	Version: 3.2.0
+	Version: 3.1.4
 	Author: Pluginbazar
 	Author URI: https://pluginbazar.com/
 	License: GPLv2 or later
@@ -29,6 +29,9 @@ if ( ! class_exists( 'Olistener_main' ) ) {
 	 * Class Olistener_main
 	 */
 	class Olistener_main {
+
+		protected static $_instance = null;
+
 		/**
 		 * Olistener_main constructor.
 		 */
@@ -38,6 +41,18 @@ if ( ! class_exists( 'Olistener_main' ) ) {
 			$this->loading_functions_classes();
 
 			add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
+		}
+
+
+		/**
+		 * @return \Olistener_main
+		 */
+		public static function instance() {
+			if ( is_null( self::$_instance ) ) {
+				self::$_instance = new self();
+			}
+
+			return self::$_instance;
 		}
 
 
@@ -87,26 +102,8 @@ if ( ! class_exists( 'Olistener_main' ) ) {
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
 		}
 	}
-
-	new Olistener_main();
 }
 
-/**
- * Initialize the plugin tracker
- *
- * @return void
- */
-function appsero_init_tracker_woc_order_alert() {
+Olistener_main::instance();
 
-	if ( ! class_exists( 'Appsero\Client' ) ) {
-		require_once __DIR__ . '/includes/appsero/Client.php';
-	}
 
-	$client = new Appsero\Client( 'a69d88e3-aa45-4d19-a672-bdff317c2d82', 'Order Listener for WooCommerce – Play Sounds Instantly on New Orders', __FILE__ );
-
-	// Active insights
-	$client->insights()->init();
-
-}
-
-appsero_init_tracker_woc_order_alert();

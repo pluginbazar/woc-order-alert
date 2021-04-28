@@ -198,12 +198,16 @@ if ( ! class_exists( 'Olistener_functions' ) ) {
 
 
 		/**
-		 * Return order statuses from WooCommerce if that is installed and activated
+		 * Return order statuses
 		 *
 		 * @return array
 		 */
 		function get_order_statuses() {
-			return function_exists( 'WC' ) ? wc_get_order_statuses() : array();
+			if ( function_exists( 'WC' ) ) {
+				return wc_get_order_statuses();
+			}
+
+			return array();
 		}
 
 

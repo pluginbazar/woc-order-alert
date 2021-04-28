@@ -9,7 +9,8 @@
 
     $(document).on('ready', function () {
 
-        let audioSrc = $('.olistener').data('audio'),
+        let listenerWrap = $('.olistener'),
+            audioSrc = listenerWrap.data('audio'),
             olistenerController = $('.olistener-action.olistener-controller'),
             ordersList = $('.olistener-orders');
 
@@ -46,6 +47,13 @@
             audioElement.currentTime = 0;
             audioElement.play();
         });
+
+        // automatically start order listening
+        if (listenerWrap.length > 0) {
+            setTimeout(function () {
+                $('.dashicons-controls-play').trigger('click');
+            }, 300);
+        }
     });
 
 

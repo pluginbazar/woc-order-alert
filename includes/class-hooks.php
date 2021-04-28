@@ -204,6 +204,7 @@ if ( ! class_exists( 'Olistener_hooks' ) ) {
 				'add_in_menu'      => true,
 				'menu_type'        => 'menu',
 				'menu_title'       => esc_html__( 'Order Listener', 'woc-order-alert' ),
+				'menu_name'        => esc_html__( 'Listener', 'woc-order-alert' ),
 				'page_title'       => esc_html__( 'Order Listener Settings', 'woc-order-alert' ),
 				'menu_page_title'  => esc_html__( 'Order Listener Settings', 'woc-order-alert' ),
 				'capability'       => 'manage_options',

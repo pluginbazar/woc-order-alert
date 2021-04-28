@@ -45,6 +45,16 @@ if ( ! class_exists( 'PB_Settings' ) ) {
 
 
 		/**
+		 * Render License warning
+		 */
+		function render_license_warning() {
+			printf( '<div class="notice notice-error"><p>You must activate <strong>%s</strong>. Don\'t have your key? <a href="%s" target="_blank">Get Now</a></p><p><a class="button-primary" href="%s">Activate License</a></p></div>',
+				$this->get_data( 'plugin_name' ), $this->get_data( 'license_url' ), $this->get_data( 'license_page' )
+			);
+		}
+
+
+		/**
 		 * Check if any plugin require to work the current plugin
 		 *
 		 * Required arguments in the initializer
