@@ -6,7 +6,7 @@
 	Requires WooCommerce: 3.0
 	Tested up to: 5.5.3
 	Tested up to WooCommerce: 4.7.0
-	Stable tag: 3.1.3
+	Stable tag: 3.1.4
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,16 +49,6 @@ Admin can add some conditions/rules to check special orders. Like - Minimum orde
 > Its a great Plugin
 >
 > I have tried many kind of plugin for my Fashion Shop…But they couldn’t full fill my Expectation…After all that hustle i tried this plugin and i am very much happy now…I love there Exclusive features…I think Every Business People Should use this plugin for there order Notification…Thank you so much
-
-
-## Privacy Policy
-Woocommerce Open Close &#8211; Best Business Schedules Manager uses [Appsero](https://appsero.com) SDK to collect some telemetry data upon user's confirmation. This helps us to troubleshoot problems faster & make product improvements.
-
-Appsero SDK **does not gather any data by default.** The SDK only starts gathering basic telemetry data **when a user allows it via the admin notice**. We collect the data to ensure a great user experience for all our users.
-
-Integrating Appsero SDK **DOES NOT IMMEDIATELY** start gathering data, **without confirmation from users in any case.**
-
-Learn more about how [Appsero collects and uses this data](https://appsero.com/privacy-policy/).
 
 
 == Installation ==
